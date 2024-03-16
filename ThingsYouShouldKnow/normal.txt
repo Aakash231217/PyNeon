@@ -39,3 +39,13 @@ ________________Parsing_______________________
     Cat----/Common interface -> Animal(makeSound)
     Birds--/
 
+5-   1+2*3
+        +
+       / \
+      1   *
+         / \
+        2   3
+    Postorder = LeftSubtree ->Right Subtree ->Root
+    A=>1     B=>2-3 ->X
+    A->B->R       1,2,3,X,R
+    
