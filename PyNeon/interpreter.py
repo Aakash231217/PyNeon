@@ -97,31 +97,27 @@ class Interpreter:
                     
                     return
 
-        # Unary operation            
+            
         if isinstance(tree, list) and len(tree) == 2:
             expression = tree[1]
             if isinstance(expression, list):
                 expression = self.interpret(expression)
             return self.compute_unary(tree[0], expression)
         
-        # No operation
         elif not isinstance(tree, list):
             return tree
         
         else:
-            # Post order traversal
-
-            # Evaluating left subtree
             left_node = tree[0]
             if isinstance(left_node, list):
                 left_node = self.interpret(left_node)
 
-            # Evaluating right subtree
+            
             right_node = tree[2]
             if isinstance(right_node, list):
                 right_node = self.interpret(right_node)
 
-            # Evaluating root node
+            
             operator = tree[1]
             return self.compute_bin(left_node, operator, right_node)
 
